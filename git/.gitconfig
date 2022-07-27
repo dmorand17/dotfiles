@@ -1,0 +1,116 @@
+[include]
+	path = ~/.gitconfig.local
+
+[alias]
+
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	#l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	l = log --graph --oneline -n 100 --decorate
+
+  ll = log --graph --pretty=format:'%Cred%H%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+
+	# View the current working tree status using the short format
+	s = status -s
+
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Pull in remote changes for the current repository and all its submodules
+	p = !"git pull; git submodule foreach git pull origin master"
+
+	# Clone a repository including all submodules
+	c = clone --recursive
+
+	# Commit all changes
+	ca = !git add -A && git commit -av
+
+	# Switch to a branch, creating it if necessary
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
+	# Amend the currently staged files to the latest commit
+	amend = commit --amend --reuse-message=HEAD
+
+	# Credit an author on the latest commit
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	
+	last = log -1 --stat
+	lognamestatus = !"git log --pretty=reference -n 100 --decorate --name-status $1"
+	cp = cherry-pick
+	co = checkout
+	br = branch
+	unstage = reset HEAD --
+	dc = diff --cached
+
+	# enable hide-dirty For current repo
+	hidedirty = !"git config --add oh-my-zsh.hide-dirty 1"
+	
+	cleanorig = clean -f *.orig
+    rmall = !"git ls-files --delete | xargs -I {} git rm {}"
+    pullmaster = !"git checkout master && git pull && git checkout -"
+
+    # Delete all branches marked [gone] on remote
+    gone = !"git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+
+    # Delete all local branches
+    dellocalbranch = !"git branch | grep -v master | xargs git branch -D"
+
+[core]
+	excludesfile = ~/.gitignore
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Don't add crlf
+	autocrlf = false
+
+    # editor = vim
+    editor = code --wait
+
+[color]
+	ui = auto
+
+[diff]
+	compactionHeuristic = true
+	noprefix = true
+
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[mergetool "code"]
+    cmd = code --wait $MERGED
+
+# oh-my-zsh settings
+# configure for repo when necessary
+# git config --add oh-my-zsh.hide-dirty 1
+# git config --add oh-my-zsh.hide-status 1
+#
+# [oh-my-zsh]
+#    hide-dirty = 1
+#    hide-status = 0
+
+[pull]
+	ff = only
+
+[init]
+  defaultBranch = main
+
+[user]
+  name = Doug Morand

@@ -1,0 +1,44 @@
+BOOTSTRAP_CFG_DIR = $(CURDIR)/.bootstrap
+CONTAINERS = $(shell which docker && docker ps -aq --filter "label=type=dotfiles")
+BRANCH ?= main
+SHA := $(shell curl -s 'https://api.github.com/repos/dmorand17/dotfiles/git/refs/heads/$(BRANCH)' | jq -r '.object.sha')
+
+#### START DOCKER SECTION
+RECENT_BUILD_BRANCH_SHA = $(shell cat .bootstrap/docker 2>/dev/null)
+BRANCH_SHA = $(BRANCH):$(SHA)
+
+test: build ## Test dotfiles using docker
+	docker run -e LANG="en_US.UTF-8" -e LANGUAGE="en_US.UTF-8" --label type=dotfiles -it bootstrappah /bin/bash
+
+build: ## Build dotfiles container. [BRANCH]=branch to build (defaults to 'main')
+	@echo "Current build: $(RECENT_BUILD_BRANCH_SHA)"
+	@echo "Requested build: $(BRANCH_SHA)"
+ifeq ($(SHA),null)
+	$(error SHA is not set.  Please ensure that [$(BRANCH)] exists, and has been pushed to remote.  Other failures could be related to API Rate limit)
+endif
+ifneq ($(RECENT_BUILD_BRANCH_SHA),$(BRANCH_SHA))
+	docker build --file test/Dockerfile --build-arg BRANCH=$(BRANCH) --build-arg SHA=$(SHA) -t dotfiles:latest .
+	@echo "Writing $(BRANCH_SHA) to $(CURDIR)/.bootstrap/docker"
+	@echo "$(BRANCH_SHA)" > $(CURDIR)/.bootstrap/docker
+else
+	@echo "Docker does not need to be built"
+endif
+
+clean: ## Clean dotfiles docker containers/images
+ifneq ($(CONTAINERS),)
+	@echo "Removing containers: $(CONTAINERS)"
+	docker rm $(CONTAINERS)
+	docker image prune -f
+else
+	@echo "Nothing to clean..."
+endif
+#### END DOCKER SECTION
+
+# Automatically build a help menu
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
+	| sort \
+	| awk 'BEGIN {FS = ":.*?## "; printf "\033[31m\nHelp Commands\033[0m\n--------------------------------\n"}; {printf "\033[32m%-22s\033[0m %s\n", $$1, $$2}'
+
+.DEFAULT_GOAL := help
+.PHONY: test build test clean
