@@ -11,6 +11,10 @@ git clone https://github.com/dmorand17/dotfiles.git
 ./install.sh
 ```
 
+## Linting
+```bash
+```
+
 ## Testing
 
 ### Building Image
@@ -41,5 +45,5 @@ A docker image can be created to be used to test.
 
 | Command                                        | Description                                |
 | ---------------------------------------------- | ------------------------------------------ |
-| `make -f Makefile-test test [BRANCH='branch']` | Build an image. Default branch is `master` |
+| `make -f Makefile-test test [BRANCH='branch']` | Build an image. Default branch is `main` |
 | `make -f Makefile-test clean`                  | clean any unused images/containers         |

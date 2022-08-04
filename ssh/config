@@ -1,0 +1,13 @@
+# auto-added
+# Include ~/.ssh/sa-aad/*
+
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 1500
+
+Host github.com
+    Hostname ssh.github.com
+    #ProxyCommand nc -X connect -x <PROXY-HOST>:<PORT> %h %p
+    Port 443
+    ServerAliveInterval 20
+    User git
