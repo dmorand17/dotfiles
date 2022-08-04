@@ -151,7 +151,7 @@ if [[ -f ~/.fzf.zsh ]]; then
 fi
 
 # Source any custom *.local files
-for file in ~/.{aliases,functions,exports}; do
+for file in ~/.{aliases,functions,exports,profile}; do
     # Allow for local version overrides
     local="${file}.local"
 	# if file has read permissions and exists then source file
