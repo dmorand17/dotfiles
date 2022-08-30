@@ -152,6 +152,9 @@ fi
 
 # Source any custom *.local files
 for file in ~/.{aliases,functions,exports,profile}; do
+    # if file has read permissions and exists then source file
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+
     # Allow for local version overrides
     local="${file}.local"
 	# if file has read permissions and exists then source file
