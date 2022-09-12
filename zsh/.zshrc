@@ -120,8 +120,6 @@ fi
 
 DEFAULT_USER="$USER"
 
-# Load brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Load starship (except on devcontainer)
 if [[ ! ${REMOTE_CONTAINERS} ]] ; then
