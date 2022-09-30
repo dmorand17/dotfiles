@@ -63,9 +63,11 @@ case "$(uname -s)" in
         )
 
         for pkg in "${BREW_CASK_PACKAGES[@]}"; do printf "installing %s\n" "${pkg}" && brew install --cask "${pkg}"; done
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "${HOME}/.zshrc"
         ;;
    Linux)
      echo 'Linux'
+     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${HOME}/.zshrc"
      ;;
    *)
      echo 'Other OS' 
