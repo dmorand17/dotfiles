@@ -4,8 +4,9 @@ set -e
 
 if [ -x "$(command -v brew)" ]; then
   printf "\n✅ SUCCESS: brew already installed\n"
-elif [[ $(arch) = "arm64" ]]; then
+elif [[ $(arch) =~ ^(arm64|aarch64)$ ]]; then
   printf "\n⛔ FAIL: Unable to install brew on arm64\n"
+  exit
 else
   printf "\n🚀 Installing the brew package manager\n"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
