@@ -13,6 +13,7 @@ case "${command}" in
     package="${1}"
     echo "🚀 Installing package: ${package}"
     (cd "${DOTFILES_LOCATION}/${package}" && ./install.sh)
+    echo "Finished installing ${package}"
     ;;
   *)
     echo "${command} does not exist"
