@@ -53,6 +53,7 @@
   },
   "rest-client.formParamEncodingStrategy": "always", // https://github.com/Huachao/vscode-restclient/issues/222
   "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.inheritEnv": true,
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",

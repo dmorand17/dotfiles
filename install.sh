@@ -14,8 +14,11 @@ export DOTFILES_LOCATION=$(pwd)
 ./bin/dotfiles install zsh
 ./bin/dotfiles install brew
 ./bin/dotfiles install git
-./bin/dotfiles install starship
 ./bin/dotfiles install vim
 ./bin/dotfiles install misc
 ./bin/dotfiles install ssh
-./bin/dotfiles install vscode
+
+if [[ ! ${REMOTE_CONTAINERS} ]] ; then
+	./bin/dotfiles install starship
+	./bin/dotfiles install vscode
+fi
