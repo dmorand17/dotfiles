@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ##
 # Sync the codebases for a branch
 #
@@ -74,21 +76,6 @@ vscode-dev-connect() {
 
   docker exec -it "${project}" zsh
 }
-
-##
-# Open the applications I use
-##
-start-day() {
-  open -a Mail
-  open -a Safari
-  open -a Slack
-  open -a Obsidian
-  open -a "Visual Studio Code"
-  open -a Music
-  open -a Twitter
-}
-
-#!/usr/bin/env bash
 
 function exe() { echo "\$ $@" ; "$@" ; }
 

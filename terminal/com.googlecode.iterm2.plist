@@ -625,6 +625,8 @@
 			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Use Transparency</key>
+			<false/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1042,7 +1044,7 @@
 			<key>Title Components</key>
 			<integer>259</integer>
 			<key>Transparency</key>
-			<real>0.090674571700507606</real>
+			<real>0.029999999999999999</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>

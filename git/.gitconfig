@@ -114,3 +114,9 @@
 
 [user]
   name = Doug Morand
+
+[includeIf "gitdir:~/workspace/personal/"]
+  path = .gitconfig-personal
+[includeIf "gitdir:~/workspace/work/"]
+  path = .gitconfig-work
+

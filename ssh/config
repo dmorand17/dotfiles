@@ -1,5 +1,5 @@
 # auto-added
-# Include ~/.ssh/sa-aad/*
+Include ~/.ssh/config-local
 
 Host *
     ServerAliveInterval 60
@@ -14,6 +14,7 @@ Host github.com
 
 Host dougie-fresh
     Hostname dougie-fresh.xyz
+    IdentityFile ~/.ssh/id_rsa-dougie-desktop
     Port 2222
     ServerAliveInterval 20
     User dougie
