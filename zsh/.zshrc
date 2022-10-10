@@ -121,7 +121,9 @@ fi
 DEFAULT_USER="$USER"
 
 # Load brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ "$(arch)" != "aarm64" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Load starship (except on devcontainer)
 if [[ ! ${REMOTE_CONTAINERS} ]] ; then
@@ -133,6 +135,9 @@ export NVM_DIR="$HOME/.nvm"
 if [ "$(arch)" = "arm64" ]; then
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+elif [ "$(arch)" = "aarm64" ]; then
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 else
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
