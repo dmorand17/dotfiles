@@ -121,7 +121,7 @@ fi
 DEFAULT_USER="$USER"
 
 # Load brew
-if [ "$(arch)" != "aarm64" ]; then
+if [ "$(arch)" != "aarch64" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
