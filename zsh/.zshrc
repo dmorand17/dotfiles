@@ -166,4 +166,3 @@ for file in ~/.{aliases,functions,exports,profile}; do
 	[ -r "$local" ]  && [ -f "$local" ] && source "$local";
 done;
 unset file;
-
