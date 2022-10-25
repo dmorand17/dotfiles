@@ -33,7 +33,7 @@
   "go.toolsManagement.autoUpdate": true,
   "prettier.printWidth": 120,
   "python.defaultInterpreterPath": "python3",
-  "python.formatting.blackArgs": ["--line-length=79"],
+  "python.formatting.blackArgs": ["--line-length=88"],
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.linting.flake8Args": ["--ignore=E501"],
