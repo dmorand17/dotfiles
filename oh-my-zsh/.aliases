@@ -56,6 +56,7 @@ alias vi="vim"
 # Random
 alias tailf="tail -f $@"
 alias batdiff="git diff --name-only --diff-filter=ad | xargs bat --diff"
+alias batplain='bat --style="plain" "$@"'
 alias g="git"
 alias gdiff="git diff -U5 -w --no-index $@"
 alias guid='uuidgen | tr "[:upper:]" "[:lower:]"'
