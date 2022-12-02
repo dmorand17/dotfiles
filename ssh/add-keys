@@ -1,2 +1,1 @@
-ssh-add ~/.ssh/id_rsa-dougie-desktop
 ssh-add ~/.ssh/id_rsa
