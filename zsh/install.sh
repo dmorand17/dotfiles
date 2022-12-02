@@ -9,6 +9,6 @@ if [[ ! ${REMOTE_CONTAINERS} ]] ; then
 fi
 
 
-ln -sf "${DOTFILES_LOCATION}/.aliases" "${HOME}/.aliases"
-ln -sf "${DOTFILES_LOCATION}/.functions" "${HOME}/.functions"
-ln -sf "${DOTFILES_LOCATION}/.exports" "${HOME}/.exports"
+ln -sf "${DOTFILES_LOCATION}/zsh/.aliases" "${HOME}/.aliases"
+ln -sf "${DOTFILES_LOCATION}/zsh/.functions" "${HOME}/.functions"
+ln -sf "${DOTFILES_LOCATION}/zsh/.exports" "${HOME}/.exports"
