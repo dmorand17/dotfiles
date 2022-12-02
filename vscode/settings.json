@@ -11,7 +11,7 @@
       "indent_size": 2
     }
   },
-  "dotfiles.installCommand": "~/dotfiles/install.sh",
+  "dotfiles.installCommand": "~/dotfiles/devcontainer-install.sh",
   "dotfiles.repository": "https://github.com/dmorand17/dotfiles.git",
   "dotfiles.targetPath": "~/dotfiles",
   "editor.bracketPairColorization.enabled": true,
