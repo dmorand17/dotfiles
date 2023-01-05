@@ -121,8 +121,13 @@ fi
 DEFAULT_USER="$USER"
 
 # Load brew
-if [ "$(arch)" != "aarch64" ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -x "$(command -v brew)" ]; then
+    if [[ $(uname -s) == Linux ]]; then
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    fi
+    elif [ "$(arch)" != "aarch64" ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
 fi
 
 # Load starship (except on devcontainer)
@@ -138,6 +143,9 @@ if [ "$(arch)" = "arm64" ]; then
 elif [ "$(arch)" = "aarm64" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+elif [[ $(uname -s) == Linux ]]; then
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 else
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -167,3 +175,5 @@ for file in ~/.{aliases,functions,exports,profile}; do
 	[ -r "$local" ]  && [ -f "$local" ] && source "$local";
 done;
 unset file;
+
+
