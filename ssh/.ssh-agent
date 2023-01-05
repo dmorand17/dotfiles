@@ -20,7 +20,9 @@ function start_agent {
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add
     source ~/.ssh/add-keys
-    source ~/.ssh/add-keys-local
+    if [ -f ${HOME}/.ssh/add-keys-local ]; then 
+        source ~/.ssh/add-keys-local
+    fi
 }
 
 if [ -f "${SSH_ENV}" ]; then
