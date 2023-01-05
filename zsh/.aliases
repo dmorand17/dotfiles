@@ -68,7 +68,8 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # dotfiles config alias
-alias config='git --git-dir=/Users/douglasm/.cfg --work-tree=/Users/douglasm'
+# This should be added to .aliases.local
+# alias config='git --git-dir=/Users/douglasm/.cfg --work-tree=/Users/douglasm'
 
 # Weather
 function weather() {
