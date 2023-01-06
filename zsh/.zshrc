@@ -124,7 +124,6 @@ DEFAULT_USER="$USER"
 if [ -x "$(command -v brew)" ]; then
     if [[ $(uname -s) == Linux ]]; then
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    fi
     elif [ "$(arch)" != "aarch64" ]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
