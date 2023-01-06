@@ -121,12 +121,10 @@ fi
 DEFAULT_USER="$USER"
 
 # Load brew
-if [ -x "$(command -v brew)" ]; then
-    if [[ $(uname -s) == Linux ]]; then
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    elif [ "$(arch)" != "aarch64" ]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    fi
+if [[ $(uname -s) == Linux ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+elif [ "$(arch)" != "aarch64" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Load starship (except on devcontainer)
