@@ -161,8 +161,9 @@ if [[ -f ~/.fzf.zsh ]]; then
       --bind="f2:toggle-preview,tab:execute(less {})"
       --preview "bat --style=numbers --color=always --line-range :500 {}"
       --preview-window=right:60%:hidden'
-  export BAT_THEME=Dracula
 fi
+
+export BAT_THEME=Dracula
 
 # Source any custom *.local files
 for file in ~/.{aliases,functions,exports,profile}; do

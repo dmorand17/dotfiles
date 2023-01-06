@@ -4,6 +4,7 @@ Include ~/.ssh/config-local
 Host *
     ServerAliveInterval 60
     ServerAliveCountMax 1500
+    IdentitiesOnly yes
 
 Host github.com
     Hostname ssh.github.com
@@ -17,4 +18,4 @@ Host dougie-fresh
     IdentityFile ~/.ssh/id_rsa-dougie-desktop
     Port 2222
     ServerAliveInterval 20
-    User dougie
+    User htpc-user

@@ -47,14 +47,7 @@ let g:airline_powerline_fonts=1
 """
 set nobackup
 set nowritebackup
-set updatetime=4000
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+set updatetime=300
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.

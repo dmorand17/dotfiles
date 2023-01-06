@@ -17,3 +17,9 @@ if [[ -f /usr/local/bin/virtualenv ]]; then
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+if [[ -x "$(command -v virtualenvwrapper.sh)" ]]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/development
+    source virtualenvwrapper.sh
+fi
