@@ -13,7 +13,7 @@ git clone https://github.com/dmorand17/dotfiles.git
 
 ## Customizing
 
-Save exports, aliases, functions in a `.extra` file.  An example is below
+Save exports, aliases, functions, etc in a `.extra` file.  An example is below
 ```
 ###
 ### Git credentials
