@@ -5,6 +5,7 @@ Host *
     ServerAliveInterval 60
     ServerAliveCountMax 1500
     IdentitiesOnly yes
+    ForwardAgent yes
 
 Host github.com
     Hostname ssh.github.com

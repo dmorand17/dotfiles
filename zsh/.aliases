@@ -22,7 +22,6 @@ alias split="gsplit"
 alias kc=kubectl
 
 # Docker
-alias drasi='docker rmi $(docker images -f "dangling=true" -q)'
 alias drai='docker rmi $(docker images -q)'
 alias drac='docker rm $(docker ps -aq)'
 alias dsac='docker stop $(docker ps -aq)'
@@ -54,6 +53,7 @@ alias batplain='bat --style="plain" "$@"'
 alias g="git"
 alias gdiff="git diff -U5 -w --no-index $@"
 alias guid='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias rgf='rg --files | rg $@'
 
 # IP addresses
 alias my_ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -66,10 +66,6 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-
-# dotfiles config alias
-# This should be added to .aliases.local
-# alias config='git --git-dir=/Users/douglasm/.cfg --work-tree=/Users/douglasm'
 
 # Weather
 function weather() {

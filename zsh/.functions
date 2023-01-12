@@ -77,7 +77,7 @@ vscode-dev-connect() {
   docker exec -it "${project}" zsh
 }
 
-function exe() { echo "\$ $@" ; "$@" ; }
+function exe() { echo "\$ $*" ; "$@" ; }
 
 rebase-with-master() {
     #1) Checks out the master branch.

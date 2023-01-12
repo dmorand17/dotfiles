@@ -78,8 +78,8 @@ source $ZSH/oh-my-zsh.sh
 
 # If not using zplug then load plugins using standard approach
 if [[ -f ~/.zplug.zsh ]]; then
-    # Load zplug
-    source ~/.zplug.zsh
+  # Load zplug
+  source ~/.zplug.zsh
   else
     # Apple Silicon
     if [ $(arch) = "arm64" ]; then
@@ -120,12 +120,17 @@ fi
 
 DEFAULT_USER="$USER"
 
+# Theme
+export BAT_THEME=Dracula
+
 # Load brew
-if [[ $(uname -s) == Linux ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-elif [ "$(arch)" != "aarch64" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+if [[ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 
 # Load starship (except on devcontainer)
 if [[ ! ${REMOTE_CONTAINERS} ]] ; then
@@ -133,19 +138,10 @@ if [[ ! ${REMOTE_CONTAINERS} ]] ; then
 fi
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-if [ "$(arch)" = "arm64" ]; then
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-elif [ "$(arch)" = "aarm64" ]; then
+if [[ -d "$HOME/.nvm" ]]; then
+  export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-elif [[ $(uname -s) == Linux ]]; then
-  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-else
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion  
 fi
 
 # Source the ssh agent if found
@@ -160,18 +156,17 @@ if [[ -f ~/.fzf.zsh ]]; then
       --preview-window=right:60%:hidden'
 fi
 
-export BAT_THEME=Dracula
-
 # Source any custom *.local files
-for file in ~/.{aliases,functions,exports,profile}; do
+for file in ~/.{aliases,functions,exports}; do
     # if file has read permissions and exists then source file
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 
-    # Allow for local version overrides
-    local="${file}.local"
+  # Allow for local version overrides
+  local="${file}.local"
 	# if file has read permissions and exists then source file
 	[ -r "$local" ]  && [ -f "$local" ] && source "$local";
 done;
 unset file;
 
-
+# Source extra config
+[[ -f ~/.extra ]] && source ~/.extra
