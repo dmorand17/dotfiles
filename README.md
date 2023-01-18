@@ -13,6 +13,13 @@ git clone https://github.com/dmorand17/dotfiles.git
 
 ## Customizing
 
+The following files can be customized for local settings by creating another version with `.local` extension:
+* .aliases
+* .exports
+* .functions
+
+e.g. `.aliases.local`
+
 Save exports, aliases, functions, etc in a `.extra` file.  An example is below
 ```
 ###

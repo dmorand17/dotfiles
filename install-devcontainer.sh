@@ -8,7 +8,7 @@ set -eo pipefail
 export DOTFILES_LOCATION=$(pwd)
 
 if [[ ! ${REMOTE_CONTAINERS} ]] ; then
-    echo "\🚨🚨🚨 $REMOTE_CONTAINERS is not set! 🚨🚨🚨"
+    echo "Not inside a dev container!  Please try again."
     exit 1 
 fi
 
