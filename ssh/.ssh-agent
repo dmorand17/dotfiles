@@ -18,7 +18,6 @@ function start_agent {
     echo succeeded
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add
     source ~/.ssh/add-keys
     if [ -f ${HOME}/.ssh/add-keys-local ]; then 
         source ~/.ssh/add-keys-local

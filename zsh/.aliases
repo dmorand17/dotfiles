@@ -48,12 +48,17 @@ alias vi="vim"
 
 # Random
 alias tailf="tail -f $@"
-alias batdiff="git diff --name-only --diff-filter=ad | xargs bat --diff"
 alias batplain='bat --style="plain" --paging=never "$@"'
 alias g="git"
-alias gdiff="git diff -U5 -w --no-index $@"
 alias guid='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias rgf='rg --files | rg $@'
+
+# Comparison
+alias gdiff="git diff -U5 -w --no-index $@"
+alias batdiff="git diff --name-only --diff-filter=ad | xargs bat --diff"
+
+# Searching
+alias rgf='rg --files | rg'
 
 # IP addresses
 alias my_ip="dig +short myip.opendns.com @resolver1.opendns.com"
