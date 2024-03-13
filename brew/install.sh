@@ -41,6 +41,10 @@ BREW_PACKAGES=(
   tree
   k9s
   kubectl
+  cfn-lint
+  awscli
+  tldr
+  httpie
 )
 
 for pkg in "${BREW_PACKAGES[@]}"; do printf "installing %s\n" "${pkg}" && brew install "${pkg}"; done
