@@ -36,8 +36,7 @@
   "python.formatting.blackArgs": ["--line-length=88"],
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
-  "python.linting.flake8Args": ["--ignore=E501"],
-  "python.linting.flake8Enabled": true,
+  "flake8.args": ["--ignore=E501"],
   "python.pythonPath": "python3",
   "rest-client.environmentVariables": {
     "$shared": {
