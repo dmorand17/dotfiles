@@ -44,7 +44,6 @@ BREW_PACKAGES=(
   kubectl
   cfn-lint
   awscli
-  tldr
   httpie
   shellcheck
   tldr
