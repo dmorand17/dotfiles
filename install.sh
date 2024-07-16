@@ -17,6 +17,7 @@ export DOTFILES_LOCATION=$(pwd)
 ./bin/dotfiles install vim
 ./bin/dotfiles install misc
 ./bin/dotfiles install ssh
+./bin/dotfiles install zed
 
 if [[ ! ${REMOTE_CONTAINERS} ]] ; then
 	./bin/dotfiles install starship

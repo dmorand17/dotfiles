@@ -63,6 +63,10 @@ function code-branch()
   done
 }
 
+gitzip() { 
+	git archive -o $@.zip HEAD
+}
+
 ##
 # Connect to a vscode dev container
 ##

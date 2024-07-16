@@ -35,6 +35,7 @@ BREW_PACKAGES=(
   yq
   nvm
   ripgrep
+  httpie
   pyenv
   starship
   yarn
@@ -45,6 +46,8 @@ BREW_PACKAGES=(
   awscli
   tldr
   httpie
+  shellcheck
+  tldr
 )
 
 for pkg in "${BREW_PACKAGES[@]}"; do printf "installing %s\n" "${pkg}" && brew install "${pkg}"; done
