@@ -1,26 +1,28 @@
-# dotfiles
+# 🚀 My personal dotfiles
 
 My dotfiles setup for bootstrapping machines.
 
 Inspired by the dotfiles setup by [Ben Selby](https://github.com/benmatselby/dotfiles)
 
-## Getting Started
+## 🏁 Getting Started
 
 ```bash
 git clone https://github.com/dmorand17/dotfiles.git
-./install.sh
+./bootstrap
 ```
 
-## Customizing
+## 🌍 Localization
 
-The following files can be customized for local settings by creating another version with `.local` extension:
-* .aliases
-* .exports
-* .functions
+The following files can be customized for local deployment by creating a version with `.local` extension:
+
+- .aliases
+- .exports
+- .functions
 
 e.g. `.aliases.local`
 
-Save exports, aliases, functions, etc in a `.extra` file.  An example is below
+Save exports, aliases, functions, etc in a `.extra` file. An example is below
+
 ```
 ###
 ### Git credentials
@@ -35,37 +37,85 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 git config --global user.name "$GIT_AUTHOR_NAME"
 ```
 
-## Testing
+## 🛠️ Development Setup
 
-Run `test.sh` to check for shellcheck errors
+### 🪝 Pre-commit Hooks
 
-### Building Image
+We use pre-commit hooks to ensure code quality before commits. This includes shellcheck for shell script validation.
 
-```bash
-docker build --build-arg SHA=$(curl -s 'https://api.github.com/repos/dmorand17/dotfiles-bare/git/refs/heads/master' | jq -r '.object.sha') -t dotfiles-test:latest .
-
-# Or build using a specific branch
-docker build --build-arg BRANCH=main --build-arg SHA=$(curl -s 'https://api.github.com/repos/dmorand17/dotfiles-bare/git/refs/heads/master' | jq -r '.object.sha') -t dotfiles-test:latest .
-```
-
-### Running dotfiles-tester
+1. Install pre-commit:
 
 ```bash
-docker run -it dotfiles-test /bin/bash
+# Using pip
+pip install pre-commit
+
+# Or using Homebrew on macOS
+brew install pre-commit
 ```
 
-When necessary reload the shell via `exec bash`
+2. Install shellcheck:
 
-### Cleanup
+```bash
+# On Ubuntu/Debian
+sudo apt-get install shellcheck
 
-docker rm $(docker ps -a -q)
-docker image prune
+# On macOS
+brew install shellcheck
 
-### Makefile
+# On Windows (via scoop)
+scoop install shellcheck
+```
 
-A docker image can be created to be used to test.
+3. Install the pre-commit hooks:
 
-| Command                                        | Description                                |
-| ---------------------------------------------- | ------------------------------------------ |
-| `make -f Makefile-test test [BRANCH='branch']` | Build an image. Default branch is `main` |
-| `make -f Makefile-test clean`                  | clean any unused images/containers         |
+```bash
+pre-commit install
+```
+
+4. (Optional) Run the hooks against all files:
+
+```bash
+pre-commit run --all-files
+```
+
+The pre-commit configuration includes:
+
+- shellcheck: Static analysis for shell scripts
+
+To skip pre-commit hooks temporarily, use:
+
+```bash
+git commit -m "Your message" --no-verify
+```
+
+## 🧪 Testing
+
+### 🏗️ Building and Running
+
+The project includes a Makefile to simplify container management. Here are the available commands:
+
+```bash
+# Build the development container
+make build
+
+# Run the container interactively
+make run
+
+# Clean up containers and unused images
+make clean
+
+# Show all available commands
+make help
+```
+
+When running the container, you can reload the shell if needed via `exec bash`.
+
+### 🧹 Cleanup
+
+Use the following command to clean up containers and prune unused images:
+
+```bash
+make clean
+```
+
+This will remove all stopped containers and clean up unused images.

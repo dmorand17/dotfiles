@@ -1,0 +1,6 @@
+repos:
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.9.0  # Use the latest version
+    hooks:
+      - id: shellcheck
+        args: ["--severity=warning"]  # Optional: configure shellcheck 
