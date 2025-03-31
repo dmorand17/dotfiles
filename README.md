@@ -1,6 +1,16 @@
 # 🚀 My personal dotfiles
 
-My dotfiles setup for bootstrapping machines.
+## Summary
+
+This repository contains my personal dotfiles configuration - a collection of customization files used to personalize my development environment across different machines. It includes shell configurations, git settings, aliases, and various utility functions. The setup is automated through a bootstrap script and supports local customizations through `.local` files.
+
+Key features:
+
+- 🔧 Automated setup via bootstrap script
+- 🎨 Customizable local configurations
+- 🪝 Pre-commit hooks for code quality
+- 🐳 Docker support for testing
+- 📦 Easy installation and management
 
 Inspired by the dotfiles setup by [Ben Selby](https://github.com/benmatselby/dotfiles)
 

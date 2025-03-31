@@ -47,6 +47,10 @@ BREW_PACKAGES=(
   httpie
   shellcheck
   tldr
+  uv
+  terraform
+  s5cmd
+  nnmap
 )
 
 for pkg in "${BREW_PACKAGES[@]}"; do printf "installing %s\n" "${pkg}" && brew install "${pkg}"; done
@@ -66,6 +70,15 @@ case "$(uname -s)" in
         font-fira-code
         font-fira-code-nerd-font
         font-fira-mono-nerd-font
+        1password-cli
+        insomnia
+        obsidian
+        postman
+        raycast
+        visual-studio-code
+        warp
+        zed
+        spotify
         )
 
         for pkg in "${BREW_CASK_PACKAGES[@]}"; do printf "installing %s\n" "${pkg}" && brew install --cask "${pkg}"; done
