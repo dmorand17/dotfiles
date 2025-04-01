@@ -4,3 +4,21 @@ repos:
     hooks:
       - id: shellcheck
         args: ["--severity=warning"]  # Optional: configure shellcheck 
+
+  - repo: local
+    hooks:
+      - id: save-vscode-extensions
+        name: Save VSCode extensions
+        entry: ./vscode/save_code_extensions
+        language: script
+        pass_filenames: false
+        files: ^vscode/
+
+  - repo: local
+    hooks:
+      - id: save-cursor-extensions
+        name: Save Cursor extensions
+        entry: ./cursor/save_cursor_extensions
+        language: script
+        pass_filenames: false
+        files: ^cursor/
