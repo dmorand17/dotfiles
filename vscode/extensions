@@ -9,15 +9,15 @@ bpruitt-goddard.mermaid-markdown-syntax-highlighting
 brunnerh.insert-unicode
 buster.ndjson-colorizer
 charliermarsh.ruff
-dannysteenman.cloudformation-yaml-snippets
 davidanson.vscode-markdownlint
-dbaeumer.vscode-eslint
 dotjoshjohnson.xml
 dracula-theme.theme-dracula
 eamodio.gitlens
 ecmel.vscode-html-css
 esbenp.prettier-vscode
 flesler.url-encode
+github.copilot
+github.copilot-chat
 golang.go
 gruntfuggly.todo-tree
 hashicorp.terraform
@@ -28,7 +28,6 @@ marklel.vscode-brazil
 mechatroner.rainbow-csv
 ms-azuretools.vscode-docker
 ms-python.debugpy
-ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
@@ -47,6 +46,7 @@ pkief.material-icon-theme
 redhat.vscode-yaml
 richie5um2.vscode-sort-json
 ritwickdey.liveserver
+robholme.hl7tools
 rust-lang.rust-analyzer
 seatonjiang.gitmoji-vscode
 snyk-security.snyk-vulnerability-scanner

@@ -1,9 +1,15 @@
 #!/bin/bash
 
 # Change to the dotfiles directory
+echo "Changing to dotfiles directory"
 pushd "$DOTFILES_LOCATION/cursor" > /dev/null || exit 1
 
-save_extensions
-git add code_extensions
+echo "Saving Cursor extensions"
+./save_extensions
+
+echo "Adding Cursor extensions to git"
+git add extensions
 
 popd > /dev/null || exit 1
+
+echo "Done"

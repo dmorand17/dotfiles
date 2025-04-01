@@ -20,4 +20,6 @@ if [ -x "$(command -v cursor)" ]; then
     while read -r extension; do
         cursor --install-extension "$extension"
     done < "${DOTFILES_LOCATION}/cursor/extensions"
+    echo "Cursor extensions installed!!!"
 fi
+

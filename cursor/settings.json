@@ -56,10 +56,6 @@
     "amazonQSessionConfigurationMessage": true
   },
   "amazonQ.workspaceIndex": true,
-  "aws.suppressPrompts": {
-    "codeWhispererConnectionExpired": true,
-    "codeWhispererNewWelcomeMessage": true
-  },
   "beautify.config": {
     "css": {
       "indent_size": 2
