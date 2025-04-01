@@ -15,11 +15,12 @@ export DOTFILES_LOCATION=$(pwd)
 ./bin/dotfiles install brew
 ./bin/dotfiles install git
 ./bin/dotfiles install vim
-./bin/dotfiles install misc
+./bin/dotfiles install screenrc
 ./bin/dotfiles install ssh
-./bin/dotfiles install zed
 
 if [[ ! ${REMOTE_CONTAINERS} ]] ; then
 	./bin/dotfiles install starship
+	./bin/dotfiles install zed
 	./bin/dotfiles install vscode
+	./bin/dotfiles install cursor
 fi

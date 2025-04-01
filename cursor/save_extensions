@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Saving Cursor extensions..."
+cursor --list-extensions > extensions

@@ -11,9 +11,6 @@
       "indent_size": 2
     }
   },
-  "dotfiles.installCommand": "~/dotfiles/devcontainer-install.sh",
-  "dotfiles.repository": "https://github.com/dmorand17/dotfiles.git",
-  "dotfiles.targetPath": "~/dotfiles",
   "editor.bracketPairColorization.enabled": true,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -33,11 +30,7 @@
   "go.toolsManagement.autoUpdate": true,
   "prettier.printWidth": 120,
   "python.defaultInterpreterPath": "python3",
-  "python.formatting.blackArgs": ["--line-length=88"],
-  "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
-  "flake8.args": ["--ignore=E501"],
-  "python.pythonPath": "python3",
   "rest-client.environmentVariables": {
     "$shared": {
       "nonProdToken": "bar",
@@ -56,19 +49,23 @@
   "terminal.integrated.inheritEnv": true,
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "todo-tree.tree.showScanModeButton": false,
-  "vs-kubernetes": {
-    "vs-kubernetes.draft-path.mac": "/Users/douglasm/.vs-kubernetes/tools/draft/darwin-amd64/draft",
-    "vs-kubernetes.kubectl-path.mac": "/Users/douglasm/.vs-kubernetes/tools/kubectl/kubectl",
-    "vs-kubernetes.minikube-path.mac": "/Users/douglasm/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
-    "vscode-kubernetes.minikube-path.mac": "/Users/douglasm/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-  },
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.tree.indent": 12,
+  "notebook.formatOnSave.enabled": true,
   "[dockercompose]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -87,11 +84,15 @@
   },
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
     },
     "editor.tabSize": 4,
-    "editor.wordBasedSuggestions": false,
-    "gitlens.codeLens.symbolScopes": ["!Module"]
+    "editor.wordBasedSuggestions": "off",
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
   },
   "[rust]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -102,5 +103,129 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.startupEditor": "none",
+  "liveServer.settings.useLocalIp": true,
+  "aws.suppressPrompts": {
+    "codeWhispererConnectionExpired": true,
+    "codeWhispererNewWelcomeMessage": true
+  },
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "snyk.yesWelcomeNotification": false,
+  "snyk.advanced.cliPath": "/Users/domorand/Library/Application Support/snyk-ls/snyk-macos",
+  "snyk.trustedFolders": [
+    "/Users/domorand/workspace/work/aws-hpc-recipes",
+    "/Users/domorand/workspace/personal/aws-samples/dynamodb/productcatalog",
+    "/Users/domorand/workspace/aws-samples/amazon-bedrock-kendra-lex-chatbot/cloudformation",
+    "/Users/domorand/workspace/work/isengard/isengard-bootstrap",
+    "/Users/domorand/workspace/personal/jinja-templating",
+    "/Users/domorand/workspace/aws-samples/amazon-kendra-langchain-extensions",
+    "/Users/domorand/workspace/personal/jinja-forge",
+    "/Users/domorand/workspace/personal/rust-minijina",
+    "/Users/domorand/Library/CloudStorage/WorkDocsDrive-Documents/AWS-services-products/AI:ML/rag-data/sample_aws_docs_data/AWSDocs/Well_Architected",
+    "/Users/domorand/workspace/work/amazon-q/q-s3-access",
+    "/Users/domorand/workspace/work/_research-computing/open-on-demand-on-aws",
+    "/Users/domorand/workspace/work/sandbox-accounts-for-events",
+    "/Users/domorand/workspace/work/_research-computing/research-engineering-studio",
+    "/Users/domorand/workspace/work/isengard/tse/aws-accelerator-config",
+    "/Users/domorand/workspace/workshops/terraform-snyk-workshop/vulnerable-ec2",
+    "/Users/domorand/workspace/work/customer-intelligence-app",
+    "/Users/domorand/workspace/personal/bedrock",
+    "/Users/domorand/workspace/personal/go-training/hello-world",
+    "/Users/domorand/workspace/work/_research-computing/aws-hpc-recipes",
+    "/Users/domorand/workspace/work/_research/aws-hpc-recipes",
+    "/Users/domorand/workspace/work/_research/research-engineering-studio",
+    "/Users/domorand/workspace/personal/aws-utils/cloud-init-wait"
+  ],
+  "telemetry.telemetryLevel": "off",
+  "viceroy.config.lastVersion": "0.53.201916",
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/node_modules/*/**": true
+  },
+  "files.exclude": {
+    ".viceroy": true,
+    "apollo-overrides": true,
+    "release-info": true,
+    "src/*/build": false,
+    "build": false,
+    "env": true,
+    "packageInfo*": true,
+    ".bemol": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/CVS": true
+  },
+  "search.exclude": {
+    "env": true,
+    "src/*/build": true,
+    "build": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
+  "[brazilPackageConfig]": {
+    "workbench.editor.languageDetection": false
+  },
+  "yaml.schemas": {
+    "file:///Users/domorand/.vscode/extensions/marklel.vscode-brazil-0.53.201916/assets/languages/rde/schema.json": "**/definition.yaml"
+  },
+  "viceroy.config.internal.lastUpdateTime": "2025-03-28T00:45:04.776Z",
+  "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off",
+  "viceroy.config.notifyGlibcIssue": false,
+  "viceroy.config.setUpCodeWhisperer": false,
+  "viceroy.doc.welcome.showAtStartup": false,
+  "snyk.folderConfigs": [
+    {
+      "folderPath": "/Users/domorand/workspace/work/_research/research-engineering-studio",
+      "baseBranch": ""
+    }
+  ],
+  "liveServer.settings.donotShowInfoMsg": true,
+  "viceroy.config.setup.amazonQ": false,
+  "amazonQ.suppressPrompts": {
+    "amazonQSessionConfigurationMessage": true
+  },
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+  "amazonQ.workspaceIndex": true
 }

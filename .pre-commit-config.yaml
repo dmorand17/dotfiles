@@ -3,13 +3,13 @@ repos:
     rev: v0.9.0  # Use the latest version
     hooks:
       - id: shellcheck
-        args: ["--severity=warning"]  # Optional: configure shellcheck 
+        args: ["--severity=error", "--exclude=SC1071"]  # Ignore SC1071 error
 
   - repo: local
     hooks:
       - id: save-vscode-extensions
         name: Save VSCode extensions
-        entry: ./vscode/save_code_extensions
+        entry: ./vscode/.pre-commit-hook.sh
         language: script
         pass_filenames: false
         files: ^vscode/
@@ -18,7 +18,7 @@ repos:
     hooks:
       - id: save-cursor-extensions
         name: Save Cursor extensions
-        entry: ./cursor/save_cursor_extensions
+        entry: ./cursor/.pre-commit-hook.sh
         language: script
         pass_filenames: false
         files: ^cursor/
