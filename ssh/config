@@ -7,8 +7,10 @@ Host *
     IdentitiesOnly yes
     ForwardAgent yes
 
+
 Host github.com
     Hostname ssh.github.com
+    IdentityFile ~/.ssh/id_ecdsa_github
     #ProxyCommand nc -X connect -x <PROXY-HOST>:<PORT> %h %p
     Port 443
     ServerAliveInterval 20

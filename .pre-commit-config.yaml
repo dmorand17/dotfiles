@@ -1,9 +1,9 @@
 repos:
   - repo: https://github.com/koalaman/shellcheck-precommit
-    rev: v0.9.0  # Use the latest version
+    rev: v0.10.0  # Use the latest version
     hooks:
       - id: shellcheck
-        args: ["--severity=error", "--exclude=SC1071"]  # Ignore SC1071 error
+        args: ["--severity=error", "--exclude=SC1071,SC2148"]  # Ignore SC1071 error
 
   - repo: local
     hooks:

@@ -8,8 +8,11 @@ bierner.markdown-mermaid
 bpruitt-goddard.mermaid-markdown-syntax-highlighting
 brunnerh.insert-unicode
 buster.ndjson-colorizer
+catppuccin.catppuccin-vsc
+catppuccin.catppuccin-vsc-icons
 charliermarsh.ruff
 davidanson.vscode-markdownlint
+docker.docker
 dotjoshjohnson.xml
 dracula-theme.theme-dracula
 eamodio.gitlens
@@ -48,6 +51,7 @@ richie5um2.vscode-sort-json
 ritwickdey.liveserver
 robholme.hl7tools
 rust-lang.rust-analyzer
+saoudrizwan.claude-dev
 seatonjiang.gitmoji-vscode
 snyk-security.snyk-vulnerability-scanner
 timonwong.shellcheck

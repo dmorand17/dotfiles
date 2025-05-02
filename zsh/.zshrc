@@ -123,7 +123,7 @@ fi
 DEFAULT_USER="$USER"
 
 # Theme
-export BAT_THEME=Dracula
+export BAT_THEME="Catppuccin Macchiato"
 
 # Load brew
 if [[ -x "/opt/homebrew/bin/brew" ]]; then
@@ -176,9 +176,7 @@ unset file;
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+export PATH=$PATH:$HOME/.toolbox/bin

@@ -49,7 +49,7 @@
   "terminal.integrated.inheritEnv": true,
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Dracula Theme",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.tree.indent": 12,
@@ -164,7 +164,18 @@
     "/Users/domorand/workspace/work/_research-computing/aws-hpc-recipes",
     "/Users/domorand/workspace/work/_research/aws-hpc-recipes",
     "/Users/domorand/workspace/work/_research/research-engineering-studio",
-    "/Users/domorand/workspace/personal/aws-utils/cloud-init-wait"
+    "/Users/domorand/workspace/personal/aws-utils/cloud-init-wait",
+    "/Users/domorand/workspace/work/_research/open-on-demand-on-aws",
+    "/Users/domorand/workspace/personal/scripts/raycast",
+    "/Users/domorand/workspace/work/secure-sagemaker-canvas-gateway",
+    "/Users/domorand/workspace/work/specialty-builder",
+    "/Users/domorand/workspace/personal/scripts/shell",
+    "/Users/domorand/workspace/personal/kendra-bedrock-serverless",
+    "/Users/domorand/workspace/personal/bedrock-knowledge-bot",
+    "/Users/domorand/workspace/personal/test-cdk-project",
+    "/Users/domorand/workspace/personal/cookiecutter-cdk-init",
+    "/Users/domorand/workspace/work/storage-analysis-poc",
+    "/Users/domorand/.dotfiles"
   ],
   "telemetry.telemetryLevel": "off",
   "viceroy.config.lastVersion": "0.53.201916",
@@ -216,16 +227,22 @@
   "viceroy.doc.welcome.showAtStartup": false,
   "snyk.folderConfigs": [
     {
-      "folderPath": "/Users/domorand/workspace/work/_research/research-engineering-studio",
-      "baseBranch": ""
+      "folderPath": "/Users/domorand/.dotfiles",
+      "baseBranch": "main",
+      "localBranches": ["main"]
     }
   ],
   "liveServer.settings.donotShowInfoMsg": true,
   "viceroy.config.setup.amazonQ": false,
   "amazonQ.suppressPrompts": {
-    "amazonQSessionConfigurationMessage": true
+    "amazonQSessionConfigurationMessage": true,
+    "amazonQChatDisclaimer": true
   },
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
-  "amazonQ.workspaceIndex": true
+  "amazonQ.workspaceIndex": true,
+  "viceroy.config.notifyMarch25AL2Support": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4o-mini",
+  "chat.agent.enabled": true
 }

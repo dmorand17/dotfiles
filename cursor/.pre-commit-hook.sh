@@ -2,7 +2,7 @@
 
 # Change to the dotfiles directory
 echo "Changing to dotfiles directory"
-pushd "$DOTFILES_LOCATION/cursor" > /dev/null || exit 1
+pushd "cursor" > /dev/null || exit 1
 
 echo "Saving Cursor extensions"
 ./save_extensions
