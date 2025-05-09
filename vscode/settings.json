@@ -175,7 +175,10 @@
     "/Users/domorand/workspace/personal/test-cdk-project",
     "/Users/domorand/workspace/personal/cookiecutter-cdk-init",
     "/Users/domorand/workspace/work/storage-analysis-poc",
-    "/Users/domorand/.dotfiles"
+    "/Users/domorand/.dotfiles",
+    "/Users/domorand/workspace/personal/cookiecutter-init",
+    "/Users/domorand/workspace/workshops/deploy-open-ondemand-on-aws-and-integrate-with-parallelcluster",
+    "/Users/domorand/workspace/personal/earthaccess-to-s3"
   ],
   "telemetry.telemetryLevel": "off",
   "viceroy.config.lastVersion": "0.53.201916",
@@ -227,9 +230,8 @@
   "viceroy.doc.welcome.showAtStartup": false,
   "snyk.folderConfigs": [
     {
-      "folderPath": "/Users/domorand/.dotfiles",
-      "baseBranch": "main",
-      "localBranches": ["main"]
+      "folderPath": "/Users/domorand/workspace/workshops/deploy-open-ondemand-on-aws-and-integrate-with-parallelcluster",
+      "baseBranch": ""
     }
   ],
   "liveServer.settings.donotShowInfoMsg": true,
@@ -244,5 +246,6 @@
   "viceroy.config.notifyMarch25AL2Support": false,
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4o-mini",
-  "chat.agent.enabled": true
+  "chat.agent.enabled": true,
+  "terminal.integrated.defaultProfile.osx": "zsh"
 }
