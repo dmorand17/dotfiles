@@ -35,6 +35,10 @@ BREW_PACKAGES=(
   yq
   nvm
   ripgrep
+  fd
+  bottom
+  dust
+  just
   httpie
   pyenv
   starship
